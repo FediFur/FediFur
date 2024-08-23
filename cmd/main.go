@@ -18,7 +18,7 @@ func NewApp(version AppVersion) *cli.App {
 	app := cli.NewApp()
 	app.Name = "fedifur"
 	app.Usage = "usage"
-	app.Version = "0.0.0"
+	app.Version = version.Version
 	app.Flags = append(app.Flags, cli.VersionFlag)
 
 	cli.VersionPrinter = func(cCtx *cli.Context) {
@@ -33,7 +33,7 @@ OS/Arch:    %s/%s
 		text := fmt.Sprintf(
 			template,
 
-			version.Version,
+			app.Version,
 			runtime.Version(),
 			version.Commit,
 			version.Compiled,
