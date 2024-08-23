@@ -1,0 +1,57 @@
+name: Bug Report
+description: Create a report to help us improve
+title: "[Bug]: "
+labels: ["Kind/Bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Describe the bug
+      description: What exactly is going wrong?
+      placeholder: A description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What are the steps necessary to reproduce this bug?
+      placeholder: Details on the steps taken to reproduce the behaviour.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What is the behaviour that you would expect to see?
+      placeholder: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log output
+      description: Please copy and paste any relevant log output.
+      render: shell
+  - type: checkboxes
+    id: check
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search both on [Codeberg](https://codeberg.org/FediFur/FediFur/issues) and [GitHub](https://github.com/FediFur/fedifur/issues) to see if this bug already exists.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Provide optional additional context about the problem.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct which can be found in `CODE_OF_CONDUCT.md` file in the root of the project.
+      options:
+        - label: I agree to follow this project's Code of Conduct.
+          required: true
+
