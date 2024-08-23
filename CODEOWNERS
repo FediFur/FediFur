@@ -1,0 +1,4 @@
+# Woodpecker CI & Forgejo/Gitea/GitHub actions
+.github/workflows/* @furry @MontiDaProot
+.gitea/workflows/* @furry @MontiDaProot
+.woodpecker/* @furry @MontiDaProot
