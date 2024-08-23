@@ -1,0 +1,57 @@
+run:
+  timeout: 10m
+
+linters-settings:
+  depguard:
+    rules:
+      main:
+        list-mode: lax
+        files:
+          - "**/*.go"
+        deny:
+          - pkg: "github.com/pkg/errors"
+            desc: Should be replaced by standard lib errors package
+          - pkg: "github.com/sirupsen/logrus"
+            desc: github.com/rs/zerolog is being used
+          - pkg: "go.uber.org/zap"
+            desc: github.com/rs/zerolog is being used
+  gomodguard:
+    allowed:
+      domains:
+        - github.com
+        - golang.org
+  gci:
+    sections:
+      - standard
+      - default
+      - localmodule
+
+linters:
+  enable:
+    - misspell
+    - gosec
+    - gomodguard
+    - gofumpt
+    - gofmt
+    - goimports
+    - gosimple
+    - depguard
+    - containedctx
+    - contextcheck
+    - fatcontext
+    - noctx
+    - bodyclose
+    - durationcheck
+    - errchkjson
+    - exhaustive
+    - exportloopref
+    - errorlint
+    - err113
+    - errname
+    - nilerr
+    - nilnil
+    - nlreturn
+    - paralleltest
+    - tenv
+    - gci
+    - lll
